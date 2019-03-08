@@ -269,6 +269,6 @@ view: rsrch_bus_cs {
 
   measure: count {
     type: count
-    drill_fields: [bus_cs_id,cat_id,clnt_id,cs_grp_id]
+    drill_fields: [bus_cs_id,start_at_dt_date,sla_due_dt_date,close_at_dt_date,prsn_id,que_id,stat,prrty,tot_tm_on_hld_cnt,tot_tm_wait_cnt,tot_work_tm_cnt,loan_id]
   }
 }
