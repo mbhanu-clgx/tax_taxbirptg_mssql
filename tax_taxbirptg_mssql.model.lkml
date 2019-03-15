@@ -21,3 +21,4 @@ explore: rsrch_bus_cs {
     sql_on: ${rsrch_bus_cs.clnt_id} = ${rsrch_clnt_cnfg.clnt_cnfg_id} ;;
   }
 }
+explore: r3_research {}
