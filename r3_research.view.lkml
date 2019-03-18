@@ -161,8 +161,13 @@ view: r3_research {
     sql: ${TABLE}.WorkTimeMin ;;
   }
 
+  dimension: loan_id {
+    type: string
+    sql: ${TABLE}.LoanId ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [case_category_name, client_name, first_name, last_name]
+    drill_fields: [case_category_name, client_name, first_name, last_name, business_case]
   }
 }
