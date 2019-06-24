@@ -528,7 +528,7 @@ view: r3_main_dash_qtpfinal {
 
   measure: prq_quality {
     type: number
-    sql: case when ${sum_PRQQCFailCnt} > 0 then 1-(${sum_PRQQCFailCnt}*1.00/${sum_PRQQCFailCnt}) else 0 end ;;
+    sql: case when ${sum_PRQQCFailCnt} > 0 then 1-(${sum_PRQQCFailCnt}*1.00/${sum_PRQQCCaseCnt}) else 0 end ;;
     value_format: "0.00%"
   }
 
