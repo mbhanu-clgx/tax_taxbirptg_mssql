@@ -2,8 +2,135 @@ view: r3_research {
   sql_table_name: dbo.R3Research ;;
 
   dimension: business_case {
-    type: string
+    type: number
     sql: ${TABLE}.BusinessCase ;;
+  }
+
+  dimension_group: cancelled_by {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.CancelledByDate ;;
+  }
+
+  dimension_group: cancelled_by_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CancelledByDateTS ;;
+  }
+
+  dimension: cancelled_by_person_first_name {
+    type: string
+    sql: ${TABLE}.CancelledByPersonFirstName ;;
+  }
+
+  dimension: cancelled_by_person_id {
+    type: number
+    sql: ${TABLE}.CancelledByPersonId ;;
+  }
+
+  dimension: cancelled_by_person_last_name {
+    type: string
+    sql: ${TABLE}.CancelledByPersonLastName ;;
+  }
+
+  dimension: cancelled_by_person_location {
+    type: string
+    sql: ${TABLE}.CancelledByPersonLocation ;;
+  }
+
+  dimension: cancelled_by_person_status {
+    type: string
+    sql: ${TABLE}.CancelledByPersonStatus ;;
+  }
+
+  dimension_group: case_assignment_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CaseAssignmentDateTS ;;
+  }
+
+  dimension: case_assignment_id {
+    type: number
+    sql: ${TABLE}.CaseAssignmentId ;;
+  }
+
+  dimension: case_assignment_person_first_name {
+    type: string
+    sql: ${TABLE}.CaseAssignmentPersonFirstName ;;
+  }
+
+  dimension: case_assignment_person_id {
+    type: number
+    sql: ${TABLE}.CaseAssignmentPersonId ;;
+  }
+
+  dimension: case_assignment_person_last_name {
+    type: string
+    sql: ${TABLE}.CaseAssignmentPersonLastName ;;
+  }
+
+  dimension: case_assignment_person_location {
+    type: string
+    sql: ${TABLE}.CaseAssignmentPersonLocation ;;
+  }
+
+  dimension: case_assignment_person_status {
+    type: string
+    sql: ${TABLE}.CaseAssignmentPersonStatus ;;
+  }
+
+  dimension: case_assignment_row_number {
+    type: number
+    sql: ${TABLE}.CaseAssignmentRowNumber ;;
+  }
+
+  dimension: case_assignment_type {
+    type: string
+    sql: ${TABLE}.CaseAssignmentType ;;
+  }
+
+  dimension: case_assignment_type_row_number {
+    type: number
+    sql: ${TABLE}.CaseAssignmentTypeRowNumber ;;
+  }
+
+  dimension_group: case_assignment_work_start_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CaseAssignmentWorkStartDateTS ;;
   }
 
   dimension: case_category_id {
@@ -19,6 +146,11 @@ view: r3_research {
   dimension: case_priority {
     type: number
     sql: ${TABLE}.CasePriority ;;
+  }
+
+  dimension: case_status {
+    type: string
+    sql: ${TABLE}.CaseStatus ;;
   }
 
   dimension: case_type {
@@ -56,6 +188,20 @@ view: r3_research {
     sql: ${TABLE}.CloseDate ;;
   }
 
+  dimension_group: close_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CloseDateTS ;;
+  }
+
   dimension_group: core {
     type: time
     timeframes: [
@@ -69,6 +215,20 @@ view: r3_research {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.CoreDate ;;
+  }
+
+  dimension_group: core_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.CoreDateTS ;;
   }
 
   dimension: days_open {
@@ -91,9 +251,34 @@ view: r3_research {
     sql: ${TABLE}.DaysToSlaCore ;;
   }
 
-  dimension: first_name {
+  dimension: finished_by_assignment_id {
     type: string
-    sql: ${TABLE}.FirstName ;;
+    sql: ${TABLE}.FinishedByAssignmentId ;;
+  }
+
+  dimension: finished_by_first_name {
+    type: string
+    sql: ${TABLE}.FinishedByFirstName ;;
+  }
+
+  dimension: finished_by_last_name {
+    type: string
+    sql: ${TABLE}.FinishedByLastName ;;
+  }
+
+  dimension: finished_by_location {
+    type: string
+    sql: ${TABLE}.FinishedByLocation ;;
+  }
+
+  dimension: finished_by_person_id {
+    type: number
+    sql: ${TABLE}.FinishedByPersonId ;;
+  }
+
+  dimension: finished_by_person_status {
+    type: string
+    sql: ${TABLE}.FinishedByPersonStatus ;;
   }
 
   dimension: hold_time_min {
@@ -101,24 +286,158 @@ view: r3_research {
     sql: ${TABLE}.HoldTimeMin ;;
   }
 
-  dimension: last_name {
+  dimension: loan_id {
     type: string
-    sql: ${TABLE}.LastName ;;
+    sql: ${TABLE}.LoanId ;;
   }
 
-  dimension: location {
-    type: string
-    sql: ${TABLE}.Location ;;
-  }
-
-  dimension: person_id {
+  dimension: missed_sla {
     type: number
-    sql: ${TABLE}.PersonId ;;
+    sql: ${TABLE}.MissedSla ;;
   }
 
-  dimension: person_status {
+  dimension: qc1_count {
+    type: number
+    sql: ${TABLE}.QC1Count ;;
+  }
+
+  dimension: qc2_count {
+    type: number
+    sql: ${TABLE}.QC2Count ;;
+  }
+
+  dimension: qcdelay_days {
+    type: number
+    sql: ${TABLE}.QCDelayDays ;;
+  }
+
+  dimension: qcdelay_minutes {
+    type: number
+    sql: ${TABLE}.QCDelayMinutes ;;
+  }
+
+  dimension: qcduration_days {
+    type: number
+    sql: ${TABLE}.QCDurationDays ;;
+  }
+
+  dimension: qcduration_minutes {
+    type: number
+    sql: ${TABLE}.QCDurationMinutes ;;
+  }
+
+  dimension: qcfailed_flag {
+    type: number
+    sql: ${TABLE}.QCFailedFlag ;;
+  }
+
+  dimension: qcfailed_question_cnt {
+    type: number
+    sql: ${TABLE}.QCFailedQuestionCnt ;;
+  }
+
+  dimension: qcperson_conflict_flag {
+    type: number
+    sql: ${TABLE}.QCPersonConflictFlag ;;
+  }
+
+  dimension: qcperson_first_name {
     type: string
-    sql: ${TABLE}.PersonStatus ;;
+    sql: ${TABLE}.QCPersonFirstName ;;
+  }
+
+  dimension: qcperson_id {
+    type: number
+    sql: ${TABLE}.QCPersonId ;;
+  }
+
+  dimension: qcperson_last_name {
+    type: string
+    sql: ${TABLE}.QCPersonLastName ;;
+  }
+
+  dimension: qcperson_location {
+    type: string
+    sql: ${TABLE}.QCPersonLocation ;;
+  }
+
+  dimension: qcperson_status {
+    type: string
+    sql: ${TABLE}.QCPersonStatus ;;
+  }
+
+  dimension: qcquestion_cnt {
+    type: number
+    sql: ${TABLE}.QCQuestionCnt ;;
+  }
+
+  dimension: qcresearch_person_conflict_flag {
+    type: number
+    sql: ${TABLE}.QCResearchPersonConflictFlag ;;
+  }
+
+  dimension: qcresearch_person_first_name {
+    type: string
+    sql: ${TABLE}.QCResearchPersonFirstName ;;
+  }
+
+  dimension: qcresearch_person_id {
+    type: number
+    sql: ${TABLE}.QCResearchPersonId ;;
+  }
+
+  dimension: qcresearch_person_last_name {
+    type: string
+    sql: ${TABLE}.QCResearchPersonLastName ;;
+  }
+
+  dimension: qcresearch_person_location {
+    type: string
+    sql: ${TABLE}.QCResearchPersonLocation ;;
+  }
+
+  dimension: qcresearch_person_status {
+    type: string
+    sql: ${TABLE}.QCResearchPersonStatus ;;
+  }
+
+  dimension_group: qcresult_create {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.QCResultCreateDate ;;
+  }
+
+  dimension_group: qcresult_create_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.QCResultCreateDateTS ;;
+  }
+
+  dimension: qcresult_id {
+    type: number
+    sql: ${TABLE}.QCResultId ;;
+  }
+
+  dimension: qctype {
+    type: number
+    sql: ${TABLE}.QCType ;;
   }
 
   dimension_group: sla {
@@ -136,6 +455,20 @@ view: r3_research {
     sql: ${TABLE}.SlaDate ;;
   }
 
+  dimension_group: sla_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.SlaDateTS ;;
+  }
+
   dimension_group: start {
     type: time
     timeframes: [
@@ -151,6 +484,35 @@ view: r3_research {
     sql: ${TABLE}.StartDate ;;
   }
 
+  dimension_group: start_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.StartDateTS ;;
+  }
+
+  dimension: uncontrollable {
+    type: number
+    sql: ${TABLE}.Uncontrollable ;;
+  }
+
+  dimension: uncontrollable_reason {
+    type: string
+    sql: ${TABLE}.UncontrollableReason ;;
+  }
+
+  dimension: uncontrollable_sla {
+    type: number
+    sql: ${TABLE}.UncontrollableSLA ;;
+  }
+
   dimension: wait_time_min {
     type: number
     sql: ${TABLE}.WaitTimeMin ;;
@@ -161,13 +523,26 @@ view: r3_research {
     sql: ${TABLE}.WorkTimeMin ;;
   }
 
-  dimension: loan_id {
-    type: string
-    sql: ${TABLE}.LoanId ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [case_category_name, client_name, first_name, last_name, business_case]
+    drill_fields: [detail*]
+  }
+
+  # ----- Sets of fields for drilling ------
+  set: detail {
+    fields: [
+      case_category_name,
+      client_name,
+      finished_by_first_name,
+      finished_by_last_name,
+      cancelled_by_person_first_name,
+      cancelled_by_person_last_name,
+      case_assignment_person_first_name,
+      case_assignment_person_last_name,
+      qcperson_first_name,
+      qcperson_last_name,
+      qcresearch_person_first_name,
+      qcresearch_person_last_name
+    ]
   }
 }
