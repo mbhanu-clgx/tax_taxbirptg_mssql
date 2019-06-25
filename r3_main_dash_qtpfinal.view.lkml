@@ -604,5 +604,53 @@ view: r3_main_dash_qtpfinal {
     value_format: "0.00%"
   }
 
+  measure: lm_productivity  {
+    type: number
+    sql: case when ${sum_LMPeopleDays} > 0 then ${sum_LMVolume}*1.00/${sum_LMPeopleDays} else 0 end;;
+    value_format: "0.00"
+  }
+
+  measure: lrq_productivity {
+    type: number
+    sql: case when ${sum_LRQPeopleDays} > 0 then ${sum_LRQVolume}*1.00/${sum_LRQPeopleDays}  else 0 end;;
+    value_format: "0.00"
+  }
+
+  measure: pm_productivity {
+    type: number
+    sql: case when ${sum_PMPeopleDays} > 0 then ${sum_PMVolume}*1.00/${sum_PMPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
+  measure: prq_productivity {
+    type: number
+    sql: case when ${sum_PRQPeopleDays} > 0 then ${sum_PRQVolume}*1.00/${sum_PRQPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
+  measure: pym_productivity {
+    type: number
+    sql: case when ${sum_PYMPeopleDays} > 0 then ${sum_PYMVolume}*1.00/${sum_PYMPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
+  measure: pyrq_productivity {
+    type: number
+    sql: case when ${sum_PYRQPeopleDays} > 0 then ${sum_PYRQVolume}*1.00/${sum_PYRQPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
+  measure: pytd_productivity {
+    type: number
+    sql: case when ${sum_PYTDPeopleDays} > 0 then ${sum_PYTDVolume}*1.00/${sum_PYTDPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
+  measure: ytd_productivity {
+    type: number
+    sql: case when ${sum_YTDPeopleDays} > 0 then ${sum_YTDVolume}*1.00/${sum_YTDPeopleDays} else 0 end ;;
+    value_format: "0.00"
+  }
+
 
 }
