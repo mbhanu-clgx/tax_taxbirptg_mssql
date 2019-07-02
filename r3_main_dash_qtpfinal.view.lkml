@@ -514,6 +514,7 @@ view: r3_main_dash_qtpfinal {
     value_format: "0.00%"
   }
 
+
   measure: lrq_quality {
     type: number
     sql: case when ${sum_LRQQCCaseCnt} > 0 then 1-(${sum_LRQQCFailCnt}*1.00/${sum_LRQQCCaseCnt})  else 0 end;;
