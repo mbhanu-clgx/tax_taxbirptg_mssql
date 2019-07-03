@@ -5,7 +5,7 @@ include: "*.view"
 
 datagroup: tax_taxbirptg_mssql_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "1 minute"
 }
 
 persist_with: tax_taxbirptg_mssql_default_datagroup
