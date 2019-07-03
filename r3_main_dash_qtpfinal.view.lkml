@@ -4,11 +4,13 @@ view: r3_main_dash_qtpfinal {
   dimension: case_category_name {
     type: string
     sql: ${TABLE}.CaseCategoryName ;;
+    suggest_persist_for: "1 minute"
   }
 
   dimension: case_type {
     type: string
     sql: ${TABLE}.CaseType ;;
+    suggest_persist_for: "1 minute"
   }
 
   dimension: client {
@@ -19,6 +21,7 @@ view: r3_main_dash_qtpfinal {
   dimension: finished_by_location {
     type: string
     sql: ${TABLE}.FinishedByLocation ;;
+    suggest_persist_for: "1 minute"
   }
 
   dimension: lmmet_sla {
