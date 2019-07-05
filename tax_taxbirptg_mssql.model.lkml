@@ -17,3 +17,5 @@ explore: r3_main_dash_qual_time_prod {}
 explore: r3_main_dash_qtpfinal {}
 
 explore: r3_main_dash_vol_final {}
+
+explore: r3_improve_dash_qual {}
