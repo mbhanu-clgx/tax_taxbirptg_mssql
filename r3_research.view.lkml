@@ -60,79 +60,6 @@ view: r3_research {
     sql: ${TABLE}.CancelledByPersonStatus ;;
   }
 
-  dimension_group: case_assignment_date_ts {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.CaseAssignmentDateTS ;;
-  }
-
-  dimension: case_assignment_id {
-    type: number
-    sql: ${TABLE}.CaseAssignmentId ;;
-  }
-
-  dimension: case_assignment_person_first_name {
-    type: string
-    sql: ${TABLE}.CaseAssignmentPersonFirstName ;;
-  }
-
-  dimension: case_assignment_person_id {
-    type: number
-    sql: ${TABLE}.CaseAssignmentPersonId ;;
-  }
-
-  dimension: case_assignment_person_last_name {
-    type: string
-    sql: ${TABLE}.CaseAssignmentPersonLastName ;;
-  }
-
-  dimension: case_assignment_person_location {
-    type: string
-    sql: ${TABLE}.CaseAssignmentPersonLocation ;;
-  }
-
-  dimension: case_assignment_person_status {
-    type: string
-    sql: ${TABLE}.CaseAssignmentPersonStatus ;;
-  }
-
-  dimension: case_assignment_row_number {
-    type: number
-    sql: ${TABLE}.CaseAssignmentRowNumber ;;
-  }
-
-  dimension: case_assignment_type {
-    type: string
-    sql: ${TABLE}.CaseAssignmentType ;;
-  }
-
-  dimension: case_assignment_type_row_number {
-    type: number
-    sql: ${TABLE}.CaseAssignmentTypeRowNumber ;;
-  }
-
-  dimension_group: case_assignment_work_start_date_ts {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.CaseAssignmentWorkStartDateTS ;;
-  }
-
   dimension: case_category_id {
     type: number
     sql: ${TABLE}.CaseCategoryId ;;
@@ -304,6 +231,79 @@ view: r3_research {
   dimension: qc2_count {
     type: number
     sql: ${TABLE}.QC2Count ;;
+  }
+
+  dimension_group: qccase_assignment_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.QCCaseAssignmentDateTS ;;
+  }
+
+  dimension: qccase_assignment_id {
+    type: number
+    sql: ${TABLE}.QCCaseAssignmentId ;;
+  }
+
+  dimension: qccase_assignment_person_first_name {
+    type: string
+    sql: ${TABLE}.QCCaseAssignmentPersonFirstName ;;
+  }
+
+  dimension: qccase_assignment_person_id {
+    type: number
+    sql: ${TABLE}.QCCaseAssignmentPersonId ;;
+  }
+
+  dimension: qccase_assignment_person_last_name {
+    type: string
+    sql: ${TABLE}.QCCaseAssignmentPersonLastName ;;
+  }
+
+  dimension: qccase_assignment_person_location {
+    type: string
+    sql: ${TABLE}.QCCaseAssignmentPersonLocation ;;
+  }
+
+  dimension: qccase_assignment_person_status {
+    type: string
+    sql: ${TABLE}.QCCaseAssignmentPersonStatus ;;
+  }
+
+  dimension: qccase_assignment_row_number {
+    type: number
+    sql: ${TABLE}.QCCaseAssignmentRowNumber ;;
+  }
+
+  dimension: qccase_assignment_type {
+    type: string
+    sql: ${TABLE}.QCCaseAssignmentType ;;
+  }
+
+  dimension: qccase_assignment_type_row_number {
+    type: number
+    sql: ${TABLE}.QCCaseAssignmentTypeRowNumber ;;
+  }
+
+  dimension_group: qccase_assignment_work_start_date_ts {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.QCCaseAssignmentWorkStartDateTS ;;
   }
 
   dimension: qcdelay_days {
@@ -537,8 +537,8 @@ view: r3_research {
       finished_by_last_name,
       cancelled_by_person_first_name,
       cancelled_by_person_last_name,
-      case_assignment_person_first_name,
-      case_assignment_person_last_name,
+      qccase_assignment_person_first_name,
+      qccase_assignment_person_last_name,
       qcperson_first_name,
       qcperson_last_name,
       qcresearch_person_first_name,

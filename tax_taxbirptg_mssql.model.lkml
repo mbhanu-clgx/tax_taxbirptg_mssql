@@ -10,7 +10,9 @@ datagroup: tax_taxbirptg_mssql_default_datagroup {
 
 persist_with: tax_taxbirptg_mssql_default_datagroup
 
-explore: r3_research {}
+explore: r3_research {
+  persist_for: "24 hour"
+}
 
 explore: r3_main_dash_qual_time_prod {}
 
@@ -19,3 +21,5 @@ explore: r3_main_dash_qtpfinal {}
 explore: r3_main_dash_vol_final {}
 
 explore: r3_improve_dash_qual {}
+
+explore: r3_improve_dash_timely {}
