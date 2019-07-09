@@ -134,6 +134,11 @@ view: r3_research_dash_qc {
     sql: ${TABLE}.FinishedByPersonStatus ;;
   }
 
+  dimension: finished_by_full_name {
+    type: string
+    sql: ${TABLE}.FinishedByFirstName + ' ' + ${TABLE}.FinishedByLastName ;;
+  }
+
   dimension: loan_id {
     type: string
     sql: ${TABLE}.LoanId ;;
@@ -400,6 +405,26 @@ view: r3_research_dash_qc {
     sql: ${TABLE}.StartDateTS ;;
   }
 
+  dimension: le_5days {
+    type: number
+    sql: CASE when cast((cast((([QCDelayMinutes]) + ([QCDurationMinutes])) as float) / 1440) as decimal(10,2))  <=5.00 AND QCResultId is not null then 1 else 0 end;;
+  }
+
+measure: : sum_le_5days {
+  type: sum
+  sql: ${le_5days};;
+}
+
+  dimension: le_3days {
+    type: number
+    sql: CASE when cast((cast((([QCDelayMinutes]) + ([QCDurationMinutes])) as float) / 1440) as decimal(10,2))  <=3.00 then 1 else 0 end;;
+  }
+
+  measure: : sum_le_3days {
+    type: sum
+    sql: ${le_3days};;
+  }
+
   measure: count {
     type: count
 #     drill_fields: [detail*]
@@ -417,7 +442,7 @@ view: r3_research_dash_qc {
 
   measure: QCTime {
     type: number
-    sql: (${sum_qcdelay_minutes} * 1.00 + ${sum_qcduration_minutes})/1440 / ${count} ;;
+    sql: case when ${cnt_qcresultid} >0 then (${sum_qcdelay_minutes} * 1.00 + ${sum_qcduration_minutes})/1440 / ${cnt_qcresultid} else 0 end;;
     value_format: "0.00"
   }
 
