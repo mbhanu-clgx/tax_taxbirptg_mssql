@@ -23,3 +23,5 @@ explore: r3_main_dash_vol_final {}
 explore: r3_improve_dash_qual {}
 
 explore: r3_improve_dash_timely {}
+
+explore: r3_research_dash_qc {}
