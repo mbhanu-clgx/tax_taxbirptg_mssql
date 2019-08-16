@@ -113,13 +113,13 @@ view: r3_main_dash_vol_final {
 
   measure: DOI {
     type: number
-    sql: case when ${sum_CSDCVolume} > 0 then ${sum_OCVolume}*7.0/(${sum_CSDCVolume} )  else 0 end;;
+    sql: case when ${sum_CSDCVolume} > 0 then ${sum_OCVolume}*5.0/(${sum_CSDCVolume} )  else 0 end;;
     value_format: "#.00"
   }
 
   measure: PMDOI {
     type: number
-    sql: case when ${sum_PMSDCVolume} > 0 then ${sum_OPMVolume}*7.0/(${sum_PMSDCVolume})  else 0 end;;
+    sql: case when ${sum_PMSDCVolume} > 0 then ${sum_OPMVolume}*5.0/(${sum_PMSDCVolume})  else 0 end;;
     value_format: "#.00"
   }
 
