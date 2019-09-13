@@ -29,7 +29,7 @@ view: lien_audit_pas_not_talon {
 
   dimension_group: process {
     type: time
-    label: "Process Date Filter"
+#     label: "Process Date"
     timeframes: [
       raw,
       date,
