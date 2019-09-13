@@ -25,3 +25,10 @@ explore: r3_improve_dash_qual {}
 explore: r3_improve_dash_timely {}
 
 explore: r3_research_dash_qc {}
+
+#Lien Audit
+explore: lien_audit_hist {}
+
+explore: lien_audit_pas_not_talon {}
+
+explore: lien_audit_talon_not_pas {}
