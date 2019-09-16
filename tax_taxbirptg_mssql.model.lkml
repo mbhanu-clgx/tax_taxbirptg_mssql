@@ -2,6 +2,7 @@ connection: "taxqn1vdsqlcw94_taxbirptg_reporting"
 
 # include all the views
 include: "*.view"
+include: "*.dashboard.lookml"
 
 datagroup: tax_taxbirptg_mssql_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
