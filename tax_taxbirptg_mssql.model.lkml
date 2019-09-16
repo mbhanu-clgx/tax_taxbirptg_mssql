@@ -26,6 +26,10 @@ explore: r3_improve_dash_timely {}
 
 explore: r3_research_dash_qc {}
 
+explore: r3_research_dash_detail_data {
+  persist_for: "24 hour"
+}
+
 #Lien Audit
 explore: lien_audit_hist {}
 

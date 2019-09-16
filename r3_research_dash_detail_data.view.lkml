@@ -1,5 +1,5 @@
-view: r3_research {
-  sql_table_name: dbo.R3Research ;;
+view: r3_research_dash_detail_data {
+  sql_table_name: dbo.R3ResearchDashDetailData ;;
 
   dimension: business_case {
     type: number
