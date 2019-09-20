@@ -528,6 +528,12 @@ view: r3_research_dash_detail_data {
     sql: cast(getdate() AS date) ;;
   }
 
+  dimension: current_weekday{
+    type: number
+    sql: DATEPART(weekday, getdate()) ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [detail*]
