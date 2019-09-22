@@ -539,6 +539,15 @@ view: r3_research_dash_detail_data {
     drill_fields: [detail*]
   }
 
+  measure: count_last_week {
+    type: count
+    filters: {
+      field: core_date
+      value: "after 7 days ago,before 1 day ago"
+      }
+    }
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
