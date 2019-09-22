@@ -543,8 +543,12 @@ view: r3_research_dash_detail_data {
     type: count
     filters: {
       field: core_date
-      value: "after 7 days ago,before 1 day ago"
+      value: "after 7 days ago"
       }
+    filters: {
+      field: core_date
+      value: "before 1 day ago"
+     }
     }
 
 
