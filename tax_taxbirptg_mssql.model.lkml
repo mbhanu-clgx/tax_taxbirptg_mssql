@@ -41,7 +41,7 @@ explore: lien_audit_talon_not_pas {}
 
 # New R3 research Top Line Metrics
 
-explore: r3_research_inventory_dash_final {}
+
 
 
 
