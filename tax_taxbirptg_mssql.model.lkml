@@ -43,6 +43,7 @@ explore: lien_audit_talon_not_pas {}
 
 
 explore:r3_research_quality_dash_final{}
+explore:r3_research_inventory_dash_final {}
 
 
 #Top Line Metrics
