@@ -179,16 +179,20 @@ view: r3_research_inventory_dash_final {
   measure: total_CurrDOI {
     type: number
     sql: case when (${total_CurrFinishP7}/5) > 0 then ${total_CurrWIP}*1.00/(${total_CurrFinishP7}/5)  else 0 end;;
+    value_format: "0.##"
   }
+
 
   measure: total_PMDOI {
     type: number
     sql: case when (${total_PMFinishP7}/5) > 0 then ${total_PMWIP}*1.00/(${total_PMFinishP7}/5) else 0 end ;;
+    value_format: "0.##"
   }
 
   measure: total_PWDOI {
     type: number
     sql: case when (${total_PWFinishP7}/5) > 0 then ${total_PWWIP}*1.00/(${total_PWFinishP7}/5) else 0 end ;;
+    value_format: "0.##"
   }
 
   measure: total_CurrOOSperc {
