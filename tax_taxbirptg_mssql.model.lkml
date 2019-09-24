@@ -27,6 +27,7 @@ explore: r3_improve_dash_timely {}
 
 explore: r3_research_dash_qc {}
 
+
 explore: r3_research_dash_detail_data {
   persist_for: "24 hour"
 }
@@ -37,3 +38,25 @@ explore: lien_audit_hist {}
 explore: lien_audit_pas_not_talon {}
 
 explore: lien_audit_talon_not_pas {}
+
+# New R3 research Top Line Metrics
+
+explore: r3_research_inventory_dash_final {}
+
+
+
+#Top Line Metrics
+
+explore: wip_opencurrent {}
+
+explore:wip_openpriorweek{}
+
+explore: wip_openpriormonth {}
+
+explore: researchcompleted_sincelastweekday{}
+
+explore: researchcompleted_lastcompletedweek{}
+
+explore: researchcompleted_lastcompletedmonth {}
+
+explore: doi_opencurrent{}
