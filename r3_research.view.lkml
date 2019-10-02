@@ -541,6 +541,7 @@ view: r3_research {
 
   measure: count_opened_one_day_ago{
     type: count
+    label: "Opened 1 day ago"
     filters: {
       field: start_date
       value: "1 day ago"
