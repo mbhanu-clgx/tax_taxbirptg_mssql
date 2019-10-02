@@ -523,6 +523,12 @@ view: r3_research {
     sql: ${TABLE}.WorkTimeMin ;;
   }
 
+  dimension: current_date{
+    type: date
+    sql: cast(getdate() AS date) ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [detail*]
