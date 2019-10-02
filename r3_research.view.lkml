@@ -548,6 +548,38 @@ view: r3_research {
       }
   }
 
+  measure: count_opened_two_days_ago{
+    type: count
+    label: "Opened 2 days ago"
+    filters: {
+      field: start_date
+      value: "2 days ago"
+    }
+  }
+  measure: count_opened_three_days_ago{
+    type: count
+    label: "Opened 3 days ago"
+    filters: {
+      field: start_date
+      value: "3 days ago"
+    }
+  }
+  measure: count_opened_four_days_ago{
+    type: count
+    label: "Opened 4 days ago"
+    filters: {
+      field: start_date
+      value: "4 days ago"
+    }
+  }
+  measure: count_opened_five_days_ago{
+    type: count
+    label: "Opened 5 days ago"
+    filters: {
+      field: start_date
+      value: " 5 days ago"
+    }
+  }
 
 
 
