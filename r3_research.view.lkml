@@ -528,6 +528,11 @@ view: r3_research {
     sql: cast(getdate() AS date) ;;
   }
 
+  dimension: one_day_ago{
+    type: date
+    sql: DATEADD(cast(getdate() AS date),-1) ;;
+  }
+
 
   measure: count {
     type: count
