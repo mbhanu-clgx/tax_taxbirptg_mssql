@@ -829,7 +829,7 @@ view: r3_research {
 
   measure: count_oos_total{
     type: count
-    label: "OOS TOTAL"
+    label: "OOS Total"
 
     filters: {
       field: core_date
@@ -847,7 +847,7 @@ view: r3_research {
 
     filters: {
       field: days_to_sla_core
-      value: "<=-1"
+      value: "<0"
     }
   }
 
