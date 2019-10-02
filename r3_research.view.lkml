@@ -530,7 +530,7 @@ view: r3_research {
 
   dimension: one_day_ago{
     type: date
-    sql: DATEADD(cast(getdate() AS date),-1) ;;
+    sql: DATEADD(DD,-1,CAST(GETDATE() AS DATE)) ;;
   }
 
 
