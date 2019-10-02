@@ -539,6 +539,18 @@ view: r3_research {
     drill_fields: [detail*]
   }
 
+  measure: count_opened_one_day_ago{
+    type: count
+    filters: {
+      field: start_date
+      value: "1 day ago"
+      }
+  }
+
+
+
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
