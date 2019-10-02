@@ -802,6 +802,30 @@ view: r3_research {
     }
   }
 
+
+  measure: count_oos_more_than_five_days_later{
+    type: count
+    label: "OOS > 5"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "<-5"
+    }
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
