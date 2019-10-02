@@ -645,6 +645,20 @@ view: r3_research {
   measure: count_in_standard{
     type: count
     label: "In Standard"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
     filters: {
       field: days_to_sla_core
       value: ">0"
@@ -674,6 +688,58 @@ view: r3_research {
       value: "0"
     }
   }
+
+
+  measure: count_oos_one_day_later{
+    type: count
+    label: "OOS + 1"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "-1"
+    }
+  }
+
+  measure: count_oos_two_days_later{
+    type: count
+    label: "OOS + 2"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "-2"
+    }
+  }
+
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
