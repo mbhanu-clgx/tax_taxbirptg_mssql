@@ -826,6 +826,32 @@ view: r3_research {
       value: "<-5"
     }
   }
+
+  measure: count_oos_total{
+    type: count
+    label: "OOS TOTAL"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "<=-1"
+    }
+  }
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
