@@ -623,6 +623,27 @@ view: r3_research {
     }
   }
 
+  measure: remaining_balance{
+    type: count
+    label: "Remaining Balance"
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+  }
+
+
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
