@@ -851,6 +851,13 @@ view: r3_research {
     }
   }
 
+  measure: OOS_percentage{
+        type: number
+    label: "OOS %"
+    sql: case when ${remaining_balance} > 0 then ${count_oos_total}*1.00/${remaining_balance} else 0 end;;
+    value_format: "0.00%"
+  }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
