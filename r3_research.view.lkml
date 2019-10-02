@@ -693,7 +693,6 @@ view: r3_research {
   measure: count_oos_one_day_later{
     type: count
     label: "OOS + 1"
-
     filters: {
       field: core_date
       value: "NULL"
@@ -702,12 +701,10 @@ view: r3_research {
       field: close_date
       value: "NULL"
     }
-
     filters: {
       field: case_status
       value: "PROCESSING"
     }
-
     filters: {
       field: days_to_sla_core
       value: "-1"
@@ -717,6 +714,27 @@ view: r3_research {
   measure: count_oos_two_days_later{
     type: count
     label: "OOS + 2"
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+    filters: {
+      field: days_to_sla_core
+      value: "-2"
+    }
+  }
+
+  measure: count_oos_three_days_later{
+    type: count
+    label: "OOS + 3"
 
     filters: {
       field: core_date
@@ -734,11 +752,55 @@ view: r3_research {
 
     filters: {
       field: days_to_sla_core
-      value: "-2"
+      value: "-3"
     }
   }
+  measure: count_oos_four_days_later{
+    type: count
+    label: "OOS + 4"
 
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
 
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "-4"
+    }
+  }
+  measure: count_oos_five_days_later{
+    type: count
+    label: "OOS + 5"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
+    filters: {
+      field: days_to_sla_core
+      value: "-5"
+    }
+  }
 
   # ----- Sets of fields for drilling ------
   set: detail {
