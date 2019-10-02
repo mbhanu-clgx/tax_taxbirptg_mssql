@@ -581,7 +581,47 @@ view: r3_research {
     }
   }
 
+  measure: count_closed_one_day_ago{
+    type: count
+    label: "Closed 1 day ago"
+    filters: {
+      field: core_date
+      value: "1 day ago"
+    }
+  }
 
+  measure: count_closed_two_days_ago{
+    type: count
+    label: "Closed 2 days ago"
+    filters: {
+      field: core_date
+      value: "2 days ago"
+    }
+  }
+  measure: count_closed_three_days_ago{
+    type: count
+    label: "Closed 3 days ago"
+    filters: {
+      field: core_date
+      value: "3 days ago"
+    }
+  }
+  measure: count_closed_four_days_ago{
+    type: count
+    label: "Closed 4 days ago"
+    filters: {
+      field: core_date
+      value: "4 days ago"
+    }
+  }
+  measure: count_closed_five_days_ago{
+    type: count
+    label: "Closed 5 days ago"
+    filters: {
+      field: core_date
+      value: " 5 days ago"
+    }
+  }
 
 
   # ----- Sets of fields for drilling ------
