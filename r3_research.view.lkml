@@ -656,7 +656,7 @@ view: r3_research {
     label: "OOS Today"
     filters: {
       field: days_to_sla_core
-      value: "=0"
+      value: "0"
     }
   }
   # ----- Sets of fields for drilling ------
