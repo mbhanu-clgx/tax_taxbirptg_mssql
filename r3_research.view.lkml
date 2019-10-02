@@ -654,6 +654,21 @@ view: r3_research {
   measure: count_oos_today{
     type: count
     label: "OOS Today"
+
+    filters: {
+      field: core_date
+      value: "NULL"
+    }
+    filters: {
+      field: close_date
+      value: "NULL"
+    }
+
+    filters: {
+      field: case_status
+      value: "PROCESSING"
+    }
+
     filters: {
       field: days_to_sla_core
       value: "0"
