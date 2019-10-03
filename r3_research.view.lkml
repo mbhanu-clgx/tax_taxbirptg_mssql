@@ -542,6 +542,7 @@ view: r3_research {
   measure: count_opened_one_day_ago{
     type: count
     label: "Opened 1 day ago"
+    drill_fields: [case_detail*]
     filters: {
       field: start_date
       value: "1 day ago"
@@ -550,6 +551,7 @@ view: r3_research {
 
   measure: count_opened_two_days_ago{
     type: count
+    drill_fields: [case_detail*]
     label: "Opened 2 days ago"
     filters: {
       field: start_date
@@ -559,6 +561,7 @@ view: r3_research {
   measure: count_opened_three_days_ago{
     type: count
     label: "Opened 3 days ago"
+    drill_fields: [case_detail*]
     filters: {
       field: start_date
       value: "3 days ago"
@@ -567,6 +570,7 @@ view: r3_research {
   measure: count_opened_four_days_ago{
     type: count
     label: "Opened 4 days ago"
+    drill_fields: [case_detail*]
     filters: {
       field: start_date
       value: "4 days ago"
@@ -575,6 +579,7 @@ view: r3_research {
   measure: count_opened_five_days_ago{
     type: count
     label: "Opened 5 days ago"
+    drill_fields: [case_detail*]
     filters: {
       field: start_date
       value: " 5 days ago"
@@ -876,4 +881,19 @@ view: r3_research {
       qcresearch_person_last_name
     ]
   }
+  set: case_detail {
+    fields: [
+      case_category_name,
+      case_status,
+      business_case,
+      loan_id,
+      start_date,
+      core_date,
+      close_date,
+      sla_date
+    ]
+  }
+
+
+
 }
