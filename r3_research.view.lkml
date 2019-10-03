@@ -539,6 +539,8 @@ view: r3_research {
     drill_fields: [detail*]
   }
 
+  # Measures for Compliance report
+
   measure: count_opened_one_day_ago{
     type: count
     label: "Opened 1 day ago"
@@ -558,6 +560,7 @@ view: r3_research {
       value: "2 days ago"
     }
   }
+
   measure: count_opened_three_days_ago{
     type: count
     label: "Opened 3 days ago"
@@ -567,6 +570,7 @@ view: r3_research {
       value: "3 days ago"
     }
   }
+
   measure: count_opened_four_days_ago{
     type: count
     label: "Opened 4 days ago"
@@ -576,6 +580,7 @@ view: r3_research {
       value: "4 days ago"
     }
   }
+
   measure: count_opened_five_days_ago{
     type: count
     label: "Opened 5 days ago"
@@ -585,6 +590,8 @@ view: r3_research {
       value: " 5 days ago"
     }
   }
+
+
 
   measure: count_closed_one_day_ago{
     type: count
@@ -605,6 +612,7 @@ view: r3_research {
       value: "2 days ago"
     }
   }
+
   measure: count_closed_three_days_ago{
     type: count
     label: "Closed 3 days ago"
@@ -614,6 +622,7 @@ view: r3_research {
       value: "3 days ago"
     }
   }
+
   measure: count_closed_four_days_ago{
     type: count
     label: "Closed 4 days ago"
@@ -623,6 +632,7 @@ view: r3_research {
       value: "4 days ago"
     }
   }
+
   measure: count_closed_five_days_ago{
     type: count
     label: "Closed 5 days ago"
@@ -645,18 +655,16 @@ view: r3_research {
       field: close_date
       value: "NULL"
     }
-
     filters: {
       field: case_status
       value: "PROCESSING"
     }
-
   }
 
   measure: count_in_standard{
     type: count
     label: "In Standard"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -665,7 +673,6 @@ view: r3_research {
       field: close_date
       value: "NULL"
     }
-
     filters: {
       field: case_status
       value: "PROCESSING"
@@ -679,7 +686,7 @@ view: r3_research {
   measure: count_oos_today{
     type: count
     label: "OOS Today"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -688,22 +695,22 @@ view: r3_research {
       field: close_date
       value: "NULL"
     }
-
     filters: {
       field: case_status
       value: "PROCESSING"
     }
-
     filters: {
       field: days_to_sla_core
       value: "0"
     }
   }
 
+# Measures for Out of Standard (OOS)
 
   measure: count_oos_one_day_later{
     type: count
     label: "OOS + 1"
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -725,6 +732,7 @@ view: r3_research {
   measure: count_oos_two_days_later{
     type: count
     label: "OOS + 2"
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -746,7 +754,7 @@ view: r3_research {
   measure: count_oos_three_days_later{
     type: count
     label: "OOS + 3"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -766,10 +774,11 @@ view: r3_research {
       value: "-3"
     }
   }
+
   measure: count_oos_four_days_later{
     type: count
     label: "OOS + 4"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -789,10 +798,11 @@ view: r3_research {
       value: "-4"
     }
   }
+
   measure: count_oos_five_days_later{
     type: count
     label: "OOS + 5"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -817,7 +827,7 @@ view: r3_research {
   measure: count_oos_more_than_five_days_later{
     type: count
     label: "OOS > 5"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
@@ -841,7 +851,7 @@ view: r3_research {
   measure: count_oos_total{
     type: count
     label: "OOS Total"
-
+    drill_fields: [case_detail*]
     filters: {
       field: core_date
       value: "NULL"
