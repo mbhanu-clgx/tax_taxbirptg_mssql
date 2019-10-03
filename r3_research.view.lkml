@@ -2,7 +2,7 @@ view: r3_research {
   sql_table_name: dbo.R3Research ;;
 
   dimension: business_case {
-    type: number
+    type: string
     sql: ${TABLE}.BusinessCase ;;
   }
 
