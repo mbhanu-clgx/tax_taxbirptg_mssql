@@ -534,10 +534,16 @@ view: r3_research {
   }
 
 
+  dimension: Research_finished_by {
+    type: string
+    sql: CONCAT(${finished_by_first_name}, ' ', ${finished_by_last_name}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
   }
+
 
   # Measures for Compliance report
 
