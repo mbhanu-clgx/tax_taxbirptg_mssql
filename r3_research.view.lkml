@@ -193,6 +193,12 @@ view: r3_research {
     sql: ${TABLE}.FinishedByLastName ;;
   }
 
+  dimension: finished_by_full_name{
+    label: "Research finished by"
+    type: string
+    sql:${finished_by_last_name}+', '+${finished_by_first_name}  ;;
+    }
+
   dimension: finished_by_location {
     type: string
     sql: ${TABLE}.FinishedByLocation ;;
@@ -483,6 +489,7 @@ view: r3_research {
     datatype: date
     sql: ${TABLE}.StartDate ;;
   }
+
 
   dimension_group: start_date_ts {
     type: time
@@ -905,14 +912,22 @@ view: r3_research {
   }
   set: case_detail {
     fields: [
-      case_category_name,
-      case_status,
       business_case,
-      loan_id,
+      case_priority,
+      sla_date,
       start_date,
       core_date,
       close_date,
-      sla_date
+      case_status,
+      case_type,
+      client_name,
+      loan_id,
+      finished_by_full_name,
+      days_open,
+      case_status,
+      uncontrollable,
+      uncontrollable_reason,
+      uncontrollable_sla
     ]
   }
 
