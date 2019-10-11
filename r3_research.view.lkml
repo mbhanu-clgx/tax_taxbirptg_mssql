@@ -547,6 +547,7 @@ view: r3_research {
   }
 
   measure: count {
+    label: "count of business cases"
     type: count
     drill_fields: [detail*]
   }
